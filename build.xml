@@ -1,0 +1,161 @@
+<project name="dashboard.hoborglabs.com" default="help" basedir=".">
+
+	<!-- optional environmental settings -->
+	<property file="build.properties" />
+
+	<!-- set default values if not already set in build.properties -->
+	<property name="dir.base" location="." />
+	<property name="dir.src" location="${dir.base}" />
+	<property name="dir.build" location="${dir.base}/build" />
+	<property name="dir.out" location="${dir.build}/out" />
+
+	<!-- Commands aliases -->
+	<property name="cmd.ds-console" value="console.php" />
+	<property name="cmd.recess" value="${dir.base}/node_modules/.bin/recess" />
+	<property name="cmd.sass" value="sass" />
+	<property name="cmd.composer" value="${dir.base}/composer.phar" />
+	<property name="cmd.displayService" value="${dir.base}/displayService.phar" />
+
+	<available file="${cmd.displayService}" property="displayService.present" />
+	<available file="${cmd.recess}" property="recess.present" />
+
+	<target name="build"
+		description="Builds Website."
+		depends="clean"
+	>
+		<parallel>
+			<!--
+			<antcall target="build.assets" />
+			-->
+			<antcall target="build.css" />
+			<antcall target="build.html" />
+		</parallel>
+
+		<exec executable="git" outputproperty="build.version">
+			<arg line="log" />
+			<arg line="-1" />
+			<arg line="--format=%h" />
+		</exec>
+
+		<echo level="info">Packing website contnet.</echo>
+		<delete file="${dir.build}/voytech.io.${build.version}.tgz" failonerror="no" />
+		<tar destfile="${dir.build}/voytech.io.${build.version}.tgz"
+			basedir="${dir.out}"
+			compression="gzip"
+		/>
+	</target>
+
+	<target name="build.dev" >
+		<property name="ds.env" value="dev" />
+		<antcall target="build" />
+	</target>
+
+	<target name="clean">
+		<echo level="info">Cleaning `${dir.out}` folder</echo>
+		<mkdir dir="${dir.out}" />
+		<delete>
+			<fileset dir="${dir.out}">
+				<include name="**" />
+				<include name="**/*" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="build.assets"
+		description="Copy css, js and other assets to target folder"
+	>
+		<echo level="info">Copying CSS.</echo>
+		<mkdir dir="${dir.out}/static/styles/" />
+		<copy todir="${dir.out}/static/styles">
+			<fileset dir="${dir.src}/styles">
+				<include name="gfx/**/*.png" />
+				<include name="gfx/**/*.gif" />
+				<include name="gfx/**/*.jpg" />
+			</fileset>
+		</copy>
+
+		<echo level="info">Copying images.</echo>
+		<mkdir dir="${dir.out}/images/" />
+		<copy todir="${dir.out}/images">
+			<fileset dir="${dir.src}/htdocs/images">
+				<include name="screenshots/*.*" />
+				<include name="*.*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="build.html">
+		<!-- <mkdir dir="${dir.out}/doc" />
+		<mkdir dir="${dir.out}/doc/dev" />
+		<mkdir dir="${dir.out}/screenshots" /> -->
+
+		<!-- If ds.env is not set, use "prod" -->
+		<property name="ds.env" value="prod" />
+
+		<echo level="info">Generating HTML to `${dir.out}`</echo>
+		<exec executable="php" failonerror="true">
+			<env key="DS_HOSTDIR" value="${dir.src}" />
+			<env key="DS_ENV" value="${ds.env}" />
+			<arg line="displayService.phar" />
+			<arg line="ds:generate" />
+			<arg line="--source='/'" />
+			<arg line="--output='${dir.out}'" />
+		</exec>
+	</target>
+
+	<target name="build.css"
+		depends="-install-recess"
+		description="Builds CSS file(s) and copy assets."
+	>
+		<echo level="info">Building ${dir.out}/static/styles/css/main.css</echo>
+		<mkdir dir="${dir.out}/static/styles/css/" />
+		<exec executable="${cmd.sass}">
+			<arg line="--style compressed" />
+			<arg line="${dir.base}/styles/sass/main.scss" />
+			<arg line="${dir.out}/static/styles/css/main.css" />
+		</exec>
+	</target>
+
+	<target name="deploy" if="deploy.do_deploy">
+		<exec executable="git" outputproperty="build.version">
+			<arg line="log" />
+			<arg line="-1" />
+			<arg line="--format=%h" />
+		</exec>
+		<scp file="${dir.build}/dashboard.hoborglabs.com.${build.version}.tgz"
+			todir="${deploy.user}@${deploy.host}:${deploy.target}"
+			keyfile="${deploy.keyfile}"
+		/>
+		<sshexec host="${deploy.host}"
+			username="${deploy.user}"
+			keyfile="${deploy.keyfile}"
+			command="tar xzf ${deploy.target}/dashboard.hoborglabs.com.${build.version}.tgz -C ${deploy.target}/public_html"
+		/>
+	</target>
+
+	<!-- Help Message -->
+	<target name="help"
+		description="Prints this help"
+	>
+		<exec executable="ant">
+			<arg value="-p" />
+		</exec>
+	</target>
+
+
+
+
+	<target name="-install-displayService" unless="displayService.present">
+		<get src="http://get.hoborglabs.com/displayService.phar" dest="${cmd.displayService}"/>
+	</target>
+
+	<target name="-install-recess" unless="recess.present">
+		<echo>${recess.present} and ${cmd.recess}</echo>
+		<exec executable="npm" >
+			<arg value="install" />
+			<arg value="recess" />
+		</exec>
+		<property name="cmd.recess" value="${dir.base}/node_modules/.bin/recess" />
+	</target>
+
+</project>

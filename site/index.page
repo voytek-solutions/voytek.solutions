@@ -1,0 +1,31 @@
+<page name="page">
+	<component name="google-analytics">
+		<data>
+			<enabled>1</enabled>
+			<account>UA-XXXXXX-X</account>
+		</data>
+	</component>
+
+	<component name="header">
+		<data></data>
+	</component>
+
+	<component name="body">
+		<data>
+			<type></type>
+		</data>
+
+		<component name="paragraph">
+			<data>
+				<size></size>
+				<markdown><![CDATA[
+## Header numner 2
+
+Lorem ipsum dolor sit ament. Lorem ispum soasd asda sdlkqwjgias jaksdper
+				]]></markdown>
+			</data>
+		</component>
+
+	</component>
+
+</page>

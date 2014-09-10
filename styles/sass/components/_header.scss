@@ -1,0 +1,29 @@
+/** Header
+
+<header>
+	<div class="container">
+		<h1>This is H1 Title</h1>
+	</div>
+</header>
+ */
+
+$header-background: #D2D2D2 !default;
+$header-color: #FFFFFF !default;
+
+header {
+	background-color: $header-background;
+	color: $header-color;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+}
+
+header .container {
+	position: relative;
+	padding-bottom: 25%;
+}
+
+header h1 {
+	position: absolute;
+	bottom: 25%;
+	font-size: 46px;
+}
