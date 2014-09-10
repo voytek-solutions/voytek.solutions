@@ -1,14 +1,15 @@
 /** Header
 
 <footer>
+	some text
 </footer>
- */
+*/
 
 $footer-background: #626262 !default;
 $footer-color: #F1F1F1 !default;
 
 footer {
 	background-color: $footer-background;
-    height: 200px;
-    color: $footer-color;
+	height: 200px;
+	color: $footer-color;
 }

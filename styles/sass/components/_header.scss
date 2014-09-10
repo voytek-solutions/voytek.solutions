@@ -24,6 +24,10 @@ header .container {
 
 header h1 {
 	position: absolute;
-	bottom: 25%;
-	font-size: 46px;
+	bottom: 5%;
+	font-size: $fontXLarge;
+	@include wide {
+		font-size: $fontXXLarge;
+		bottom: 25%;
+	}
 }

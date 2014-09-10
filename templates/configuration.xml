@@ -1,0 +1,31 @@
+<templates>
+	<component name="page"
+		folder="layout/page"
+		template="default" />
+
+	<component name="header"
+		folder="components/grid/header"
+		template="default" />
+
+	<component name="footer"
+		folder="components/grid/footer"
+		template="default" />
+
+	<component name="section"
+		folder="components/grid/section"
+		template="default" />
+
+	<component name="paragraph"
+		folder="components/modules/paragraph"
+		template="default.xs" />
+	<component name="media-grid"
+		folder="components/modules/media-grid"
+		template="default" />
+	<component name="navigation"
+		folder="components/modules/navigation"
+		template="default" />
+
+	<component name="google-analytics"
+		folder="components/modules/google/analytics"
+		template="default" />
+</templates>
