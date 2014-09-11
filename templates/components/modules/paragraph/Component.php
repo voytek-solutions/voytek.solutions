@@ -9,9 +9,12 @@ class Paragraph extends Component {
 	}
 
 	public function prepareData() {
-
 		parent::prepareData();
-		foreach ($this->data->documentElement->childNodes as $component) {
+
+		$nodes = $this->data->documentElement->childNodes;
+
+		for ($i = 0; $i < $nodes->length; $i++) {
+			$component = $nodes->item($i);
 			if ('markdown' === $component->nodeName) {
 				if ($component->hasAttribute('file')) {
 					$mdFile = $this->provider->getRootDir()

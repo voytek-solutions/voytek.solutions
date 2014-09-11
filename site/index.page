@@ -19,11 +19,27 @@
 			<data>
 				<size>content</size>
 				<markdown><![CDATA[
-## Summary
+## Summary {#summary}
 
 All aspects of web applications, focusing mainly on performance and user experience, has been one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring, service-oriented applications and front-end engineering. Wojtek has very good understanding of web presence and programming skills to deliver solutions on the highest possible level.
 
 Wojtek gained very good theoretical knowledge during his M.Sc. studies and previous projects enhanced his practical skills of programming, software design and agile software development.
+				]]></markdown>
+
+				<markdown><![CDATA[
+## Contact {#contact}
+
+The easiest way to contact me is via [Linked In](https://www.linkedin.com/in/wojtekoledzki)
+				]]></markdown>
+
+				<markdown><![CDATA[
+## Open Source {#open-source}
+
+**Simple Dashboard** - ...
+
+**Display Service** - ...
+
+**Hubot CI Operator** - ...
 				]]></markdown>
 			</data>
 		</component>

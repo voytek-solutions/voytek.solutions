@@ -7,7 +7,7 @@
 	<property name="dir.base" location="." />
 	<property name="dir.src" location="${dir.base}" />
 	<property name="dir.build" location="${dir.base}/build" />
-	<property name="dir.out" location="${dir.build}/out" />
+	<property name="dir.out" location="${dir.base}/out" />
 
 	<!-- Commands aliases -->
 	<property name="cmd.ds-console" value="console.php" />

@@ -2,6 +2,21 @@
 	Variables
 */
 
+// Defining breakpoints
+$medium: 620px !default;
+$wide: 800px !default;
+$huge: 1600px !default;
+$mediumContainer: 688px !default;
+$wideContainer: 864px !default;
+
+// Defining grid sizes
+$mediumColCount: 3 !default;
+$mediumColWidth: 30.3% !default;
+$mediumGutterWidth: 4.5% !default;
+$wideColCount: 4 !default;
+$wideColWidth: 22.2% !default;
+$wideGutterWidth: 3.7% !default;
+
 // Defining font family
 $fontDefault: Helvetica, Arial, sans-serif !default;
 $fontHighlight: "Roboto Condensed", Helvetica, sans-serif !default;

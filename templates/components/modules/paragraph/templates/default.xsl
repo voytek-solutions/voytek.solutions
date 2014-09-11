@@ -8,7 +8,11 @@
     <xsl:include href="../../../../helpers/hoborg.xsl"/>
 	<xsl:template match="/component">
 		<div class="{data/size}">
-			<xsl:value-of select="data/text" disable-output-escaping="yes" />
+			<xsl:apply-templates select="data/text" />
 		</div>
 	</xsl:template>
+
+    <xsl:template match="text">
+        <xsl:value-of select="." disable-output-escaping="yes" />
+    </xsl:template>
 </xsl:stylesheet>

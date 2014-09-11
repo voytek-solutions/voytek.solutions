@@ -7,7 +7,7 @@
 	<xsl:output method="html"
 		encoding="utf-8"
 		media-type="text/html"
-		indent="yes"
+		indent="no"
 	/>
 
 	<xsl:template match="component">

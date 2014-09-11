@@ -24,10 +24,48 @@ header .container {
 
 header h1 {
 	position: absolute;
-	bottom: 5%;
+	bottom: 15%;
+	margin: 0;
 	font-size: $fontXLarge;
+
 	@include wide {
 		font-size: $fontXXLarge;
 		bottom: 25%;
 	}
+}
+
+.main-nav {
+	background-color: $colorGrayDark;
+	font-family: $fontHighlight;
+	color: #FFFFFF;
+
+	a {
+		color: #FFFFFF;
+		text-decoration: none;
+		font-size: $fontMedium;
+		font-weight: 300;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.main-nav > ul {
+	margin: 0 auto;
+	padding: 0;
+	max-width: $wideContainer;
+}
+
+.main-nav__list li {
+	padding: 2%;
+}
+
+.list--inline {
+
+}
+
+.list--inline li {
+	display: inline-block;
+	list-style: none;
 }
