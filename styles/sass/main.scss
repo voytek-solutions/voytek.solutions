@@ -20,6 +20,13 @@ html {
 	display: inline-block;
 }
 
+.labels-list {
+
+}
+.labels-list >li {
+	padding-right: 16px;
+}
+
 @import "_grid";
 
 // Components

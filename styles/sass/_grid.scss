@@ -14,6 +14,14 @@ section, header, footer {
 .content {
 	h1, h2, h3, h4, h5, h6,
 	p, &>ol, &>ul {
-		margin-right: 25%;
+		margin-right: 0%;
 	}
+
+	@include wide {
+		h1, h2, h3, h4, h5, h6,
+		p, &>ol, &>ul {
+			margin-right: 25%;
+		}
+	}
+
 }

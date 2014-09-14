@@ -21,9 +21,33 @@
 				<markdown><![CDATA[
 ## Summary {#summary}
 
-All aspects of web applications, focusing mainly on performance and user experience, has been one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring, service-oriented applications and front-end engineering. Wojtek has very good understanding of web presence and programming skills to deliver solutions on the highest possible level.
+All aspects of web applications, focusing mainly on **performance**, **user experience** and **automation**, has been
+one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring,
+service-oriented applications, front-end engineering and dev-ops. Wojtek has very good understanding of web presence and
+programming skills to deliver solutions on the highest possible level.
 
 Wojtek gained very good theoretical knowledge during his M.Sc. studies and previous projects enhanced his practical skills of programming, software design and agile software development.
+
+### Skills
+
+<ul class="list--inline labels-list">
+	<li class="tag label">Continues Integration &amp; Deployment</li>
+	<li class="tag label">Agile &amp; Kanban</li>
+</ul>
+
+<ul class="list--inline labels-list">
+	<li class="tag label">Ansible</li>
+	<li class="tag label">Chef</li>
+	<li class="tag label">Vagrant</li>
+	<li class="tag label">Jenkins</li>
+</ul>
+
+<ul class="list--inline labels-list">
+	<li class="tag label">node.js</li>
+	<li class="tag label">PHP</li>
+	<li class="tag label">Perl</li>
+	<li class="tag label">Java</li>
+</ul>
 				]]></markdown>
 
 				<markdown><![CDATA[
@@ -35,9 +59,11 @@ The easiest way to contact me is via [Linked In](https://www.linkedin.com/in/woj
 				<markdown><![CDATA[
 ## Open Source {#open-source}
 
-**Simple Dashboard** - ...
+**Simple Dashboard** - It's a easy to extend dashboard system which makes it easy to connect to Graphite, Jenkins,
+Splunk.
 
-**Display Service** - ...
+**Display Service** - Generating static pages for your blog with displayService.phar is super easy. You can extend
+components with PHP if you need to.
 
 **Hubot CI Operator** - ...
 				]]></markdown>
