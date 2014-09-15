@@ -11,17 +11,15 @@ gulp.task('styles:scss', function () {
       precision: 10,
       loadPath: ['styles/sass']
     }))
-    .on('error', console.error.bind(console))
-    .pipe(gulp.dest('build/out/static/styles/css'))
-    .pipe($.size({title: 'styles:scss'}));
+    .pipe($.size({title: 'static/styles/css/main.css'}))
+    .pipe(gulp.dest('out/static/styles/css'))
 });
 
 // Output Final CSS Styles
-gulp.task('styles', ['styles:scss']);
+gulp.task('styles', [ 'styles:scss' ]);
 
 gulp.task('html', function() {
     gulp.src('site/**/*.page')
-    .pipe($.size({title: 'styles:scss'}))
     .pipe($.spawn({
         cmd: "php",
         args: [

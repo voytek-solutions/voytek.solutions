@@ -24,13 +24,21 @@ header .container {
 
 header h1 {
 	position: absolute;
-	bottom: 15%;
 	margin: 0;
-	font-size: $fontXLarge;
+	bottom: 12%;
+	font-size: $fontLarge;
+	text-align: center;
+
+	@include medium {
+		font-size: $fontXLarge;
+		bottom: 15%;
+		text-align: left;
+	}
 
 	@include wide {
 		font-size: $fontXXLarge;
 		bottom: 25%;
+		text-align: left;
 	}
 }
 
@@ -44,8 +52,13 @@ header h1 {
 	a {
 		color: #FFFFFF;
 		text-decoration: none;
-		font-size: $fontMedium;
+		font-size: $fontBase;
+
 		font-weight: 300;
+
+		@include medium {
+			font-size: $fontMedium;
+		}
 	}
 
 	a:hover {
