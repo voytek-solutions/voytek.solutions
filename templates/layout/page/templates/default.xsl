@@ -29,14 +29,6 @@
 
 			<body>
 				<xsl:value-of select="$H_SUB_COMPONENTS" disable-output-escaping="yes" />
-				<footer>
-					<div class="container">
-						<p>
-							powered by
-							<a href="http://hoborglabs.com">hoborglabs</a>
-						</p>
-					</div>
-				</footer>
 			</body>
 		</html>
 	</xsl:template>

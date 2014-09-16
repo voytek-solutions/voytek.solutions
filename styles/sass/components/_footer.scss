@@ -10,6 +10,50 @@ $footer-color: #F1F1F1 !default;
 
 footer {
 	background-color: $footer-background;
-	height: 200px;
 	color: $footer-color;
+	padding: 26px 0 42px 0;
+}
+
+.footer-extras,
+.footer-links {
+	padding: 15px 0;
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-links {
+	list-style: none;
+	margin: 0;
+	border-right: 1px solid rgba(255,255,255,0.3);
+	margin-left: -1px;
+	text-align: right;
+
+	li {
+		padding-right: 10px;
+	}
+
+	a {
+		color: #FFF;
+		font-size: $fontSmall;
+		text-decoration: none;
+	}
+
+	a:hover:before {
+		content: "# ";
+	}
+}
+
+.footer-extras {
+	p {
+		margin: 0;
+		padding: 0 0 0 10px;
+		font-size: $fontSmall;
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: 500;
+		color: white;
+	}
 }

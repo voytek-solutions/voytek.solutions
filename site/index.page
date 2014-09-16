@@ -65,11 +65,16 @@ Splunk.
 **Display Service** - Generating static pages for your blog with displayService.phar is super easy. You can extend
 components with PHP if you need to.
 
-**Hubot CI Operator** - ...
+**Hubot CI Operator** - Simple Hubot plugin for conecting your github project branches and pull requsts with Jenkins
+builds.
 				]]></markdown>
 			</data>
 		</component>
 
+	</component>
+
+	<component name="footer">
+		<data></data>
 	</component>
 
 </page>

@@ -37,7 +37,7 @@ gulp.task('html', function() {
 gulp.task('build', [ 'html', 'styles' ]);
 
 gulp.task('watch', [ 'styles', 'html' ], function() {
-    gulp.watch([ 'site/**/*.page' ], [ 'html' ]);
+    gulp.watch([ 'site/**/*.page', 'templates/**/*.xsl' ], [ 'html' ]);
 	gulp.watch([ 'styles/**/*.scss' ], [ 'styles' ]);
 });
 
