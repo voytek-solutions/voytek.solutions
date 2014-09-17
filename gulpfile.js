@@ -15,8 +15,14 @@ gulp.task('styles:scss', function () {
     .pipe(gulp.dest('out/static/styles/css'))
 });
 
+gulp.task('styles:gfx', function() {
+    return gulp.src([ 'styles/gfx/*' ])
+    .pipe(gulp.dest('out/static/styles/gfx'))
+
+});
+
 // Output Final CSS Styles
-gulp.task('styles', [ 'styles:scss' ]);
+gulp.task('styles', [ 'styles:scss', 'styles:gfx' ]);
 
 gulp.task('html', function() {
     gulp.src('site/**/*.page')

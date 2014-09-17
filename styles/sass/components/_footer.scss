@@ -20,6 +20,10 @@ footer {
 	width: 50%;
 	display: inline-block;
 	vertical-align: top;
+
+	@include wide {
+		padding: 24px 0;
+	}
 }
 
 .footer-links {
@@ -42,6 +46,12 @@ footer {
 	a:hover:before {
 		content: "# ";
 	}
+
+	@include wide {
+		li {
+			padding-right: 36px;
+		}
+	}
 }
 
 .footer-extras {
@@ -55,5 +65,20 @@ footer {
 		text-decoration: none;
 		font-weight: 500;
 		color: white;
+	}
+
+	// a:hover {
+	// 	border-bottom: 1px dashed;
+	// }
+
+	a:hover {
+		color: $colorGrayDark;
+		text-shadow: rgba(255, 255, 255, 0.6) 0 0 16px;
+	}
+
+	@include wide {
+		p {
+			padding: 0 0 0 36px;
+		}
 	}
 }

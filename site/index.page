@@ -59,8 +59,10 @@ The easiest way to contact me is via [Linked In](https://www.linkedin.com/in/woj
 				<markdown><![CDATA[
 ## Open Source {#open-source}
 
-**Simple Dashboard** - It's a easy to extend dashboard system which makes it easy to connect to Graphite, Jenkins,
-Splunk.
+You can find all my open source projects on github [<i class="i i--github"></i>HoborgLabs](http://github.com/hoborglabs)
+
+**Simple Dashboard** - It's good looking and easy to extend dashboard system which
+makes it easy to connect to Graphite, Jenkins, Splunk.
 
 **Display Service** - Generating static pages for your blog with displayService.phar is super easy. You can extend
 components with PHP if you need to.
