@@ -5,13 +5,13 @@ var $ = require('gulp-load-plugins')();
 
 // Compile Sass Files
 gulp.task('styles:scss', function () {
-  return gulp.src('styles/sass/main.scss')
+  return gulp.src([ 'styles/sass/main.scss', 'styles/sass/inline.scss' ])
     .pipe($.rubySass({
       style: 'compressed',
       precision: 10,
       loadPath: ['styles/sass']
     }))
-    .pipe($.size({title: 'static/styles/css/main.css'}))
+    .pipe($.size({title: 'generated size'}))
     .pipe(gulp.dest('out/static/styles/css'))
 });
 

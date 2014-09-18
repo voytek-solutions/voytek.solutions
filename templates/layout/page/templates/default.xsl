@@ -18,17 +18,19 @@
 
 		<html itemtype="http://schema.org/Product">
 			<head>
-				<meta itemprop="name" content="Hoborg Labs Dashboard" />
+				<meta itemprop="name" content="Voytek Solutions" />
 				<meta itemprop="description"
 					content="Quick and easy way to add dynamic dashboard to your project!" />
 
-				<link href="/static/styles/css/main.css" media="all" rel="stylesheet"
-					type="text/css" />
+				<style><xsl:value-of select="data/css" /></style>
 				<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
 			</head>
 
 			<body>
 				<xsl:value-of select="$H_SUB_COMPONENTS" disable-output-escaping="yes" />
+
+				<link href="/static/styles/css/main.css" media="all" rel="stylesheet"
+					type="text/css" />
 			</body>
 		</html>
 	</xsl:template>

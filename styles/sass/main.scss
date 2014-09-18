@@ -5,31 +5,6 @@
 
 @import "_variables";
 @import "_utils";
-@import "_normalize";
-@import "_typography";
 
-html {
-	font-family: $fontDefault;
-	font-size: $fontBase;
-	line-height: 1.6250em;
-	font-weight: 300;
-}
-
-.tag:before {
-	content: "# ";
-	display: inline-block;
-}
-
-.labels-list {
-
-}
-.labels-list >li {
-	padding-right: 16px;
-}
-
-@import "_grid";
-
-// Components
-@import "components/_header";
 @import "components/_footer";
 @import "components/_icons";
