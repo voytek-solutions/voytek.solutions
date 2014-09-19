@@ -18,12 +18,9 @@
 	<component name="paragraph"
 		folder="components/modules/paragraph"
 		template="default.xs" />
-	<component name="media-grid"
-		folder="components/modules/media-grid"
-		template="default" />
-	<component name="navigation"
-		folder="components/modules/navigation"
-		template="default" />
+	<component name="software-application-description"
+		folder="components/modules/software-application-description"
+		template="default.xs" />
 
 	<component name="google-analytics"
 		folder="components/modules/google/analytics"
