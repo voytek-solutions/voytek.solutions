@@ -8,6 +8,7 @@
 		method="html"
 		encoding="utf-8"
 		indent="no" />
+
 	<xsl:template match="/component">
 		<footer>
 			<div class="container">
@@ -17,8 +18,7 @@
 					<li><a href="#open-source">Open Source</a></li>
 				</ul>
 				<div class="footer-extras">
-					<p>
-					powered by
+					<p>powered by
 					<a href="http://hoborglabs.com">hoborglabs</a>
 					</p>
 				</div>

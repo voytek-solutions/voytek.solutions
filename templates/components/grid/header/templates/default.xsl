@@ -17,7 +17,7 @@
 		<nav class="main-nav ">
 			<ul class="list--inline main-nav__list">
 				<li class=""><a class="" href="#summary" title="Summary">Summary <i class="main-nav__icon icon icon-chevron-right"></i></a></li>
-				<li class=""><a class="" href="#contact" title="Contact">Contact	 <i class="main-nav__icon icon icon-chevron-right"></i></a></li>
+				<li class=""><a class="" href="#contact" title="Contact">Contact<i class="main-nav__icon icon icon-chevron-right"></i></a></li>
 				<li class=""><a class="" href="#open-source" title="Open Source">Open Source <i class="main-nav__icon icon icon-chevron-right"></i></a></li>
 			</ul>
 		</nav>

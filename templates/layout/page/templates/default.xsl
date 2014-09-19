@@ -29,8 +29,7 @@
 			<body>
 				<xsl:value-of select="$H_SUB_COMPONENTS" disable-output-escaping="yes" />
 
-				<link href="/static/styles/css/main.css" media="all" rel="stylesheet"
-					type="text/css" />
+				<script>(function(d,l,h){l=d.createElement('link');l.rel='stylesheet';l.href='/static/styles/css/main.css';h=d.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);})(document);</script>
 			</body>
 		</html>
 	</xsl:template>
