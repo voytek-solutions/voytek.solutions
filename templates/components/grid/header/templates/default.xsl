@@ -8,6 +8,7 @@
 		method="html"
 		encoding="utf-8"
 		indent="no" />
+
 	<xsl:template match="/component">
 		<header>
 			<div class="container">

@@ -1,22 +1,4 @@
 
-/**
- * 1. Prevent iOS text size adjust after orientation change, without disabling
- *	user zoom.
- */
-
-html {
-	-ms-text-size-adjust: 100%; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 1 */
-}
-
-/**
- * Remove default margin.
- */
-
-body {
-	margin: 0;
-}
-
 /* HTML5 display definitions
 	 ========================================================================== */
 
@@ -26,17 +8,11 @@ body {
  * Correct `block` display not defined for `main` in IE 11.
  */
 
-//article,
-//aside,
-//details,
-//figcaption,
-//figure,
-footer,
-header,
-main,
-nav,
-section,
-summary {
+article,
+aside,
+details,
+figcaption,
+figure {
 	display: block;
 }
 
@@ -45,23 +21,23 @@ summary {
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 
-// audio,
-// canvas,
-// progress,
-// video {
-// 	display: inline-block; /* 1 */
-// 	vertical-align: baseline; /* 2 */
-// }
+audio,
+canvas,
+progress,
+video {
+	display: inline-block; /* 1 */
+	vertical-align: baseline; /* 2 */
+}
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
 
-// audio:not([controls]) {
-// 	display: none;
-// 	height: 0;
-// }
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
 
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
@@ -73,26 +49,6 @@ template {
 	display: none;
 }
 
-/* Links
-	 ========================================================================== */
-
-/**
- * Remove the gray background color from active links in IE 10.
- */
-
-a {
-	background: transparent;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-
-a:active,
-a:hover {
-	outline: 0;
-}
-
 /* Text-level semantics
 	 ========================================================================== */
 
@@ -100,57 +56,49 @@ a:hover {
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
 
-// abbr[title] {
-// 	border-bottom: 1px dotted;
-// }
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-
-b,
-strong {
-	font-weight: bold;
+abbr[title] {
+	border-bottom: 1px dotted;
 }
+
 
 /**
  * Address styling not present in Safari and Chrome.
  */
 
-// dfn {
-// 	font-style: italic;
-// }
+dfn {
+	font-style: italic;
+}
 
 
 /**
  * Address styling not present in IE 8/9.
  */
 
-// mark {
-// 	background: #ff0;
-// 	color: #000;
-// }
+mark {
+	background: #ff0;
+	color: #000;
+}
 
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 
-// sub,
-// sup {
-// 	font-size: 75%;
-// 	line-height: 0;
-// 	position: relative;
-// 	vertical-align: baseline;
-// }
-//
-// sup {
-// 	top: -0.5em;
-// }
-//
-// sub {
-// 	bottom: -0.25em;
-// }
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
 
 /* Embedded content
 	 ========================================================================== */
@@ -167,9 +115,9 @@ img {
  * Correct overflow not hidden in IE 9/10/11.
  */
 
-// svg:not(:root) {
-// 	overflow: hidden;
-// }
+svg:not(:root) {
+	overflow: hidden;
+}
 
 /* Grouping content
 	 ========================================================================== */
@@ -178,9 +126,9 @@ img {
  * Remove margin
  */
 
-// figure {
-// 	margin: 0;
-// }
+figure {
+	margin: 0;
+}
 
 /**
  * Address differences between Firefox and other browsers.
@@ -204,13 +152,13 @@ pre {
  * Address odd `em`-unit font size rendering in all browsers.
  */
 
-// code,
-// kbd,
-// pre,
-// samp {
-// 	font-family: monospace, monospace;
-// 	font-size: 1em;
-// }
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
 
 /* Forms
 	 ========================================================================== */
