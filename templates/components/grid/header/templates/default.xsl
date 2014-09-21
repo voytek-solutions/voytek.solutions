@@ -12,7 +12,7 @@
 	<xsl:template match="/component">
 		<header>
 			<div class="container">
-				<h1>voytek.solutions</h1>
+				<h1 itemprop="name">voytek.solutions</h1>
 			</div>
 		</header>
 		<nav class="main-nav ">

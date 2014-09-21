@@ -16,11 +16,11 @@
 	<xsl:include href="../../../helpers/hoborg.xsl" />
 	<xsl:template match="/component">
 
-		<html itemtype="http://schema.org/Product">
+		<html itemtype="http://schema.org/Organisation">
 			<head>
-				<meta itemprop="name" content="Voytek Solutions" />
-				<meta itemprop="description"
-					content="Quick and easy way to add dynamic dashboard to your project!" />
+				<title itemprop="name">Voytek Solutions</title>
+				<meta itemprop="description" name="description"
+					content="performance, user experience and automation it's our life’s passions" />
 
 				<style><xsl:value-of select="data/css" /></style>
 				<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
