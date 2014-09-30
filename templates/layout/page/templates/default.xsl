@@ -16,8 +16,10 @@
 	<xsl:include href="../../../helpers/hoborg.xsl" />
 	<xsl:template match="/component">
 
-		<html itemtype="http://schema.org/Organisation">
+		<html itemscope="itemscope" itemtype="http://schema.org/Organisation">
 			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 				<title itemprop="name">Voytek Solutions</title>
 				<meta itemprop="description" name="description"
 					content="performance, user experience and automation it's our life’s passions" />

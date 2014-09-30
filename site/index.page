@@ -2,12 +2,6 @@
 	<data>
 		<css-file>../out/static/styles/css/inline.css</css-file>
 	</data>
-	<!-- <component name="google-analytics">
-		<data>
-			<enabled>1</enabled>
-			<account>UA-XXXXXX-X</account>
-		</data>
-	</component> -->
 
 	<component name="header">
 		<data></data>
@@ -22,20 +16,22 @@
 			<data>
 				<size>content</size>
 				<markdown><![CDATA[
-## Summary {#summary}
-
-All aspects of web applications, focusing mainly on **performance**, **user experience** and **automation**, has been
-one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring,
+<p id="summary" itemprop="description">
+All aspects of web applications, focusing mainly on <b>performance</b>, <b>user experience</b> and <b>automation</b>,
+has been one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring,
 service-oriented applications, front-end engineering and dev-ops. Wojtek has very good understanding of web presence and
 programming skills to deliver solutions on the highest possible level.
+</p>
 
-Wojtek gained very good theoretical knowledge during his M.Sc. studies and previous projects enhanced his practical skills of programming, software design and agile software development.
+Wojtek gained very good theoretical knowledge during his M.Sc. studies and previous projects enhanced his practical
+skills of programming, software design and agile software development.
 
 ### Skills
 
 <ul class="list--inline labels-list">
 	<li class="tag label">Continues Integration &amp; Deployment</li>
 	<li class="tag label">Agile &amp; Kanban</li>
+	<li class="tag label">DevOps</li>
 </ul>
 
 <ul class="list--inline labels-list">
@@ -94,5 +90,12 @@ You can find all my open source projects on github [<i class="i i--github"></i>H
 	<component name="footer">
 		<data></data>
 	</component>
+
+	<!-- <component name="google-analytics">
+		<data>
+			<enabled>1</enabled>
+			<account>UA-XXXXXX-X</account>
+		</data>
+	</component> -->
 
 </page>

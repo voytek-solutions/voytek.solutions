@@ -3,11 +3,13 @@
 	version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:php="http://php.net/xsl"
-	exclude-result-prefixes="php">
+	exclude-result-prefixes="php"
+>
 	<xsl:output
 		method="html"
 		encoding="utf-8"
-		indent="no" />
+		indent="no"
+	/>
 
 	<xsl:template match="/component">
 		<footer>
@@ -18,8 +20,11 @@
 					<li><a href="#open-source">Open Source</a></li>
 				</ul>
 				<div class="footer-extras">
-					<p>powered by
-					<a href="http://hoborglabs.com">hoborglabs</a>
+					<p>
+						powered by <a href="http://hoborglabs.com">hoborglabs</a>
+					</p>
+					<p>
+						© 2014 Wojtek Olędzki
 					</p>
 				</div>
 			</div>

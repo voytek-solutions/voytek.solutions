@@ -25,7 +25,8 @@ class Paragraph extends Component {
 					$md = $component->nodeValue;
 				}
 				$html = Markdown($md);
-				$html = preg_replace('/\n\s*/', '', $html);
+				$html = preg_replace('/\n\s*\</', '<', $html);
+				$html = preg_replace('/\n\s*([^<])/', ' \1', $html);
 				$html = preg_replace('/(\s|\t)+/', ' ', $html);
 
 				$textNode = $this->data->importNode(
