@@ -69,21 +69,29 @@ You can find all my open source projects on github [<i class="i i--github"></i>H
 		<component name="software-application-description">
 			<data>
 				<name>Simple Dashboard</name>
-				<description>It's good looking and easy to extend dashboard system which makes it easy to connect to Graphite, Jenkins, Splunk.</description>
+				<description>
+					It's good looking and easy to extend dashboard system which makes it easy to collect data from
+					Graphite, Jenkins, Splunk, Github and put it one place.
+				</description>
 			</data>
 		</component>
 
 		<component name="software-application-description">
 			<data>
 				<name>Display Service</name>
-				<description>Generating static pages for your blog with displayService.phar is super easy. You can extend components with PHP if you need to.</description>
+				<description>
+					Generating static pages for your blog with displayService.phar is super easy. You can extend
+					components with PHP if you need to.
+				</description>
 			</data>
 		</component>
 
 		<component name="software-application-description">
 			<data>
 				<name>Hubot CI Operator</name>
-				<description>Simple Hubot plugin for conecting your github project branches and pull requsts with Jenkins builds.</description>
+				<description>
+					Simple Hubot plugin for conecting your github project branches and pull requsts with Jenkins builds.
+				</description>
 			</data>
 		</component>
 

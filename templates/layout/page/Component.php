@@ -15,7 +15,6 @@ class Page extends Component {
 		for ($i = 0; $i < $nodes->length; $i++) {
 			$component = $nodes->item($i);
 			if ('css-file' === $component->nodeName) {
-				var_dump($component->nodeName);
 				$cssFile = $this->provider->getRootDir()
 						. '/' . $this->provider->getSitePrefix()
 						. '/' . $component->nodeValue;

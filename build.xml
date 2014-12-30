@@ -24,12 +24,11 @@
 		depends="clean"
 	>
 		<parallel>
-			<!--
 			<antcall target="build.assets" />
-			-->
 			<antcall target="build.css" />
-			<antcall target="build.html" />
 		</parallel>
+
+		<antcall target="build.html" />
 
 		<exec executable="git" outputproperty="build.version">
 			<arg line="log" />
@@ -38,8 +37,8 @@
 		</exec>
 
 		<echo level="info">Packing website contnet.</echo>
-		<delete file="${dir.build}/voytech.io.${build.version}.tgz" failonerror="no" />
-		<tar destfile="${dir.build}/voytech.io.${build.version}.tgz"
+		<delete file="${dir.build}/voytek.solutions.${build.version}.tgz" failonerror="no" />
+		<tar destfile="${dir.build}/voytek.solutions.${build.version}.tgz"
 			basedir="${dir.out}"
 			compression="gzip"
 		/>
@@ -48,17 +47,6 @@
 	<target name="build.dev" >
 		<property name="ds.env" value="dev" />
 		<antcall target="build" />
-	</target>
-
-	<target name="clean">
-		<echo level="info">Cleaning `${dir.out}` folder</echo>
-		<mkdir dir="${dir.out}" />
-		<delete>
-			<fileset dir="${dir.out}">
-				<include name="**" />
-				<include name="**/*" />
-			</fileset>
-		</delete>
 	</target>
 
 	<target name="build.assets"
@@ -71,15 +59,6 @@
 				<include name="gfx/**/*.png" />
 				<include name="gfx/**/*.gif" />
 				<include name="gfx/**/*.jpg" />
-			</fileset>
-		</copy>
-
-		<echo level="info">Copying images.</echo>
-		<mkdir dir="${dir.out}/images/" />
-		<copy todir="${dir.out}/images">
-			<fileset dir="${dir.src}/htdocs/images">
-				<include name="screenshots/*.*" />
-				<include name="*.*" />
 			</fileset>
 		</copy>
 	</target>
@@ -114,22 +93,35 @@
 			<arg line="${dir.base}/styles/sass/main.scss" />
 			<arg line="${dir.out}/static/styles/css/main.css" />
 		</exec>
+
+		<echo level="info">Building ${dir.out}/static/styles/css/inline.css</echo>
+		<exec executable="${cmd.sass}">
+			<arg line="--style compressed" />
+			<arg line="${dir.base}/styles/sass/inline.scss" />
+			<arg line="${dir.out}/static/styles/css/inline.css" />
+		</exec>
 	</target>
 
-	<target name="deploy" if="deploy.do_deploy">
-		<exec executable="git" outputproperty="build.version">
-			<arg line="log" />
-			<arg line="-1" />
-			<arg line="--format=%h" />
-		</exec>
-		<scp file="${dir.build}/dashboard.hoborglabs.com.${build.version}.tgz"
+
+
+
+	<!--
+		DEPLOY
+	-->
+	<target name="deploy">
+		<property name="deploy.host" value="s2.mydevil.net" />
+		<property name="deploy.user" value="woledzki" />
+		<property name="deploy.keyfile" value="~/.ssh/id_rsa" />
+		<property name="deploy.target" value="~/domains/voytek.solutions" />
+
+		<scp file="${dir.build}/voytek.solutions.${build.version}.tgz"
 			todir="${deploy.user}@${deploy.host}:${deploy.target}"
 			keyfile="${deploy.keyfile}"
 		/>
 		<sshexec host="${deploy.host}"
 			username="${deploy.user}"
 			keyfile="${deploy.keyfile}"
-			command="tar xzf ${deploy.target}/dashboard.hoborglabs.com.${build.version}.tgz -C ${deploy.target}/public_html"
+			command="tar xzf ${deploy.target}/voytek.solutions.${build.version}.tgz -C ${deploy.target}/public_html"
 		/>
 	</target>
 
@@ -140,6 +132,17 @@
 		<exec executable="ant">
 			<arg value="-p" />
 		</exec>
+	</target>
+
+	<target name="clean">
+		<echo level="info">Cleaning `${dir.out}` folder</echo>
+		<mkdir dir="${dir.out}" />
+		<delete>
+			<fileset dir="${dir.out}">
+				<include name="**" />
+				<include name="**/*" />
+			</fileset>
+		</delete>
 	</target>
 
 

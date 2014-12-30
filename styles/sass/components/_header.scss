@@ -11,7 +11,8 @@ $header-background: #D2D2D2 !default;
 $header-color: #FFFFFF !default;
 
 header {
-	background-color: $header-background;
+	background-image: url(/static/styles/gfx/bg.jpg);
+	background-size: cover;
 	color: $header-color;
 	-moz-box-sizing: border-box;
 	     box-sizing: border-box;
