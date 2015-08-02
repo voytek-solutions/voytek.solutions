@@ -13,6 +13,10 @@ footer {
 	color: $footer-color;
 	padding: 26px 0 42px 0;
 	margin-top: 40px;
+
+	div, p, .footer-extras, .footer-links {
+		font-size: $fontSmall;
+	}
 }
 
 .footer-extras,
@@ -40,7 +44,6 @@ footer {
 
 	a {
 		color: #FFF;
-		font-size: $fontSmall;
 		text-decoration: none;
 	}
 
@@ -63,7 +66,6 @@ footer {
 	p {
 		margin: 0;
 		padding: 0 0 0 10px;
-		font-size: $fontSmall;
 	}
 
 	a {

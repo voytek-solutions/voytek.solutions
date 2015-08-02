@@ -15,16 +15,23 @@
 		<component name="paragraph">
 			<data>
 				<size>content</size>
+				<schema-type>http://schema.org/ProfessionalService</schema-type>
 				<markdown><![CDATA[
 <p id="summary" itemprop="description">
-All aspects of web applications, focusing mainly on <b>performance</b>, <b>user experience</b> and <b>automation</b>,
-has been one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring,
-service-oriented applications, front-end engineering and dev-ops. Wojtek has very good understanding of web presence and
-programming skills to deliver solutions on the highest possible level.
+All aspects of web applications, focusing mainly on performance, buill and deploy automation is one of our's life
+passions.
 </p>
+
+#### Team
+
+**Wojtek, founder of Voytek Solutions** - His interests cover the fields of performance engineering, performance
+testing, build and deploy automation, service-oriented applications and front-end engineering. Wojtek has very good
+understanding of web presence and programming skills to deliver highly responsive solutions on the highest possible
+level.
 
 Wojtek gained very good theoretical knowledge during his M.Sc. studies and previous projects enhanced his practical
 skills of programming, software design and agile software development.
+
 
 ### Skills
 
@@ -35,25 +42,27 @@ skills of programming, software design and agile software development.
 </ul>
 
 <ul class="list--inline labels-list">
-	<li class="tag label">Ansible</li>
-	<li class="tag label">Chef</li>
-	<li class="tag label">Vagrant</li>
-	<li class="tag label">Jenkins</li>
-</ul>
-
-<ul class="list--inline labels-list">
 	<li class="tag label">node.js</li>
 	<li class="tag label">PHP</li>
 	<li class="tag label">Perl</li>
 	<li class="tag label">Java</li>
+</ul>
+
+<ul class="list--inline labels-list">
+	<li class="tag label">Ansible</li>
+	<li class="tag label">Chef</li>
+	<li class="tag label">Vagrant</li>
+	<li class="tag label">Jmeter</li>
+	<li class="tag label">Go (go.cd)</li>
+	<li class="tag label">Jenkins</li>
 </ul>
 				]]></markdown>
 
 				<markdown><![CDATA[
 ## Contact {#contact}
 
-The easiest way to contact me is via [Linked In](https://www.linkedin.com/in/wojtekoledzki).<br />
-And you can find [my CV](/cv.pdf) here.
+The easiest way to contact me is via [Linked In](https://www.linkedin.com/in/wojtekoledzki) and you can
+find [my CV](/cv.pdf) here.
 
 				]]></markdown>
 
@@ -101,11 +110,11 @@ You can find all my open source projects on github [<i class="i i--github"></i>H
 		<data></data>
 	</component>
 
-	<!-- <component name="google-analytics">
+	<component name="google-analytics">
 		<data>
 			<enabled>1</enabled>
-			<account>UA-XXXXXX-X</account>
+			<account>UA-37323022-2</account>
 		</data>
-	</component> -->
+	</component>
 
 </page>

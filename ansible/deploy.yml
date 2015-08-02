@@ -1,0 +1,15 @@
+---
+
+- name: Deploy site to Amazon S3 Storage
+  hosts: localhost
+
+  vars_files:
+    - aws.yml
+
+  tasks:
+    - name: Upload Files
+      s3:
+        bucket: mybucket
+        object: /my/desired/key.txt
+        src: /usr/local/myfile.txt
+        mode: put

@@ -1,0 +1,47 @@
+<page name="page">
+	<data>
+		<css-file>../out/static/styles/css/inline.css</css-file>
+	</data>
+	<!-- <component name="google-analytics">
+		<data>
+			<enabled>1</enabled>
+			<account>UA-XXXXXX-X</account>
+		</data>
+	</component> -->
+
+	<component name="header">
+		<data></data>
+	</component>
+
+	<component name="section">
+		<data>
+			<type></type>
+		</data>
+
+		<component name="paragraph">
+			<data>
+				<size>content</size>
+				<markdown><![CDATA[
+<div class="card-header">
+	<h2>Ask Me How</h2>
+	<h3>Make your Site Faster</h3>
+</div>
+				]]></markdown>
+
+				<markdown><![CDATA[
+<div class="card-header">
+	<h2>Ask Me How</h2>
+	<h3>Automate Your Deployments</h3>
+</div>
+				]]></markdown>
+
+			</data>
+		</component>
+
+	</component>
+
+	<component name="footer">
+		<data></data>
+	</component>
+
+</page>

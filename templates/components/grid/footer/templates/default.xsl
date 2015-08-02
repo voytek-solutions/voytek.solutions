@@ -24,9 +24,14 @@
 						powered by <a href="http://hoborglabs.com">hoborglabs</a>
 					</p>
 					<p>
-						© 2014 Wojtek Olędzki
+						© 2014-2015 Wojtek Olędzki
 					</p>
 				</div>
+
+				<p itemscope="itemscope" itemtype="http://schema.org/ProfessionalService">
+					<b itemprop="legalName">Voytek Solutions Ltd</b> is a company registered in England and Wales.
+					Company No. 9449603. VAT No. <span itemprop="vatID">206143743</span>
+				</p>
 			</div>
 		</footer>
 	</xsl:template>

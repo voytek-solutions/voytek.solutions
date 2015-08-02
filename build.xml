@@ -8,6 +8,7 @@
 	<property name="dir.src" location="${dir.base}" />
 	<property name="dir.build" location="${dir.base}/build" />
 	<property name="dir.out" location="${dir.base}/out" />
+	<property name="dir.aws" location="${dir.base}/aws" />
 
 	<!-- Commands aliases -->
 	<property name="cmd.ds-console" value="console.php" />
@@ -29,6 +30,9 @@
 		</parallel>
 
 		<antcall target="build.html" />
+
+		<get src="https://dl.dropboxusercontent.com/u/29134678/Oledzki%20Wojciech%20CV.pdf" dest="${dir.out}/cv.pdf"/>
+		<!-- <get src="https://docs.google.com/uc?authuser=0&id=0Bx5BALwqbcLKNHcyMlpvTmhnZWc" dest="${dir.out}/cv.pdf"/> -->
 
 		<exec executable="git" outputproperty="build.version">
 			<arg line="log" />
@@ -64,22 +68,25 @@
 	</target>
 
 	<target name="build.html">
-		<!-- <mkdir dir="${dir.out}/doc" />
-		<mkdir dir="${dir.out}/doc/dev" />
-		<mkdir dir="${dir.out}/screenshots" /> -->
-
 		<!-- If ds.env is not set, use "prod" -->
 		<property name="ds.env" value="prod" />
 
 		<echo level="info">Generating HTML to `${dir.out}`</echo>
+		<mkdir dir="${dir.out}/" />
 		<exec executable="php" failonerror="true">
 			<env key="DS_HOSTDIR" value="${dir.src}" />
 			<env key="DS_ENV" value="${ds.env}" />
-			<arg line="displayService.phar" />
+			<arg line="${cmd.displayService}" />
 			<arg line="ds:generate" />
 			<arg line="--source='/'" />
 			<arg line="--output='${dir.out}'" />
 		</exec>
+	</target>
+
+	<target name="build.aws_html">
+		<echo level="info">Compressing HTML for s3 bucket</echo>
+
+		<mkdir dir="${dir.aws}/" />
 	</target>
 
 	<target name="build.css"
