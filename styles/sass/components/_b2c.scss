@@ -1,0 +1,68 @@
+/** Button
+<a class="btn">My Button</a>
+*/
+
+$brand-round: 10px;
+
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 3;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: $brand-round;
+}
+
+.btn{
+    &,
+    &:hover {
+        text-decoration:none;
+    }
+
+    &:active,
+    &:focus {
+        outline:none;
+    }
+}
+
+.btn--small {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    line-height:2;
+}
+
+.btn--large {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    line-height: 4;
+}
+
+.btn--huge {
+    padding-right: 2em;
+    padding-left: 2em;
+    line-height: 5;
+}
+
+/**
+ * Positive actions; e.g. sign in, purchase, submit, etc.
+ */
+.btn--positive{
+    background-color: #4A993E;
+    color:#fff;
+}
+
+/**
+ * Negative actions; e.g. close account, delete photo, remove friend, etc.
+ */
+.btn--negative{
+    background-color: #b33630;
+    color:#fff;
+}
