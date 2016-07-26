@@ -9,10 +9,33 @@ $footer-background: #626262 !default;
 $footer-color: #F1F1F1 !default;
 
 footer {
-	background-color: $footer-background;
-	color: $footer-color;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 	padding: 26px 0 42px 0;
 	margin-top: 40px;
+	z-index: -10;
+
+	background-color: $footer-background;
+	/* background: radial-gradient(ellipse at top center, rgba(19,19,19,1) 0%, rgba(98,98,98,1) 70%); */
+	background: linear-gradient(180deg, #333 0%, $footer-background 45%);
+
+
+	color: $footer-color;
+
+	div, p, .footer-extras, .footer-links {
+		font-size: $fontSmall;
+	}
+
+	.banner {
+		text-align: center;
+		margin: 32px 0;
+		padding: 0;
+		letter-spacing: 3px;
+		font-weight: 400;
+		font-size: 56px;
+		text-shadow: rgba(0,0,0,1) 6px 6px 16px;
+	}
 }
 
 .footer-extras,
@@ -35,6 +58,7 @@ footer {
 	width: 40%;
 
 	li {
+		/* padding: 0px 10px 6px 0px; */
 		padding-right: 10px;
 	}
 
@@ -62,6 +86,7 @@ footer {
 
 	p {
 		margin: 0;
+		/* padding: 0 0 6px 10px; */
 		padding: 0 0 0 10px;
 		font-size: $fontSmall;
 	}
@@ -72,10 +97,6 @@ footer {
 		color: white;
 	}
 
-	// a:hover {
-	// 	border-bottom: 1px dashed;
-	// }
-
 	a:hover {
 		color: $colorGrayDark;
 		text-shadow: rgba(255, 255, 255, 0.6) 0 0 16px;
@@ -85,7 +106,7 @@ footer {
 		width: 50%;
 
 		p {
-			padding: 0 0 0 36px;
+			padding: 0 0 6px 36px;
 		}
 	}
 }

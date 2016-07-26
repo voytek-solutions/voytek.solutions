@@ -11,13 +11,12 @@
 
 	<!-- Commands aliases -->
 	<property name="cmd.ds-console" value="console.php" />
-	<property name="cmd.recess" value="${dir.base}/node_modules/.bin/recess" />
-	<property name="cmd.sass" value="sass" />
+	<property name="cmd.sass" value="~/.gem/ruby/2.0.0/bin/sass" />
 	<property name="cmd.composer" value="${dir.base}/composer.phar" />
 	<property name="cmd.displayService" value="${dir.base}/displayService.phar" />
 
 	<available file="${cmd.displayService}" property="displayService.present" />
-	<available file="${cmd.recess}" property="recess.present" />
+	<available file="${cmd.sass}" property="sass.present" />
 
 	<target name="build"
 		description="Builds Website."
@@ -29,19 +28,6 @@
 		</parallel>
 
 		<antcall target="build.html" />
-
-		<exec executable="git" outputproperty="build.version">
-			<arg line="log" />
-			<arg line="-1" />
-			<arg line="--format=%h" />
-		</exec>
-
-		<echo level="info">Packing website contnet.</echo>
-		<delete file="${dir.build}/voytek.solutions.${build.version}.tgz" failonerror="no" />
-		<tar destfile="${dir.build}/voytek.solutions.${build.version}.tgz"
-			basedir="${dir.out}"
-			compression="gzip"
-		/>
 	</target>
 
 	<target name="build.dev" >
@@ -83,7 +69,7 @@
 	</target>
 
 	<target name="build.css"
-		depends="-install-recess"
+		depends="-install-sass"
 		description="Builds CSS file(s) and copy assets."
 	>
 		<echo level="info">Building ${dir.out}/static/styles/css/main.css</echo>
@@ -152,13 +138,13 @@
 		<get src="http://get.hoborglabs.com/displayService.phar" dest="${cmd.displayService}"/>
 	</target>
 
-	<target name="-install-recess" unless="recess.present">
-		<echo>${recess.present} and ${cmd.recess}</echo>
-		<exec executable="npm" >
+	<target name="-install-sass" unless="sass.present">
+		<echo>${sass.present} and ${cmd.present}</echo>
+		<exec executable="gem" >
 			<arg value="install" />
-			<arg value="recess" />
+			<arg value="--user-install" />
+			<arg value="sass" />
 		</exec>
-		<property name="cmd.recess" value="${dir.base}/node_modules/.bin/recess" />
 	</target>
 
 </project>

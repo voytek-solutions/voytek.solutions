@@ -1,5 +1,5 @@
 <?php
-use Hoborg\Bundle\DisplayServiceBundle\Component\Component;
+use Hoborg\DisplayService\Component\Component;
 
 class Page extends Component {
 

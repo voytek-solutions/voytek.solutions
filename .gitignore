@@ -2,6 +2,7 @@
 .sass-cache
 .DS_Store
 node_modules
+/out
 /build
 /displayService.phar
 /conf/*/conf.yml

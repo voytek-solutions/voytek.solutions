@@ -1,7 +1,9 @@
 <?php
 namespace components\modules\google\analytics;
 
-class Component extends \Hoborg\Bundle\DisplayServiceBundle\Component\Component {
+use Hoborg\DisplayService\Component\Component;
+
+class Component extends Component {
 
 	public function render() {
 		$enabled = $this->data->getElementsByTagName('enabled');

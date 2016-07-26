@@ -49,5 +49,4 @@ gulp.task('watch', [ 'styles', 'html' ], function() {
 
 gulp.on('error', function() {
     console.error('Error');
-
 });

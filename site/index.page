@@ -17,7 +17,7 @@
 				<size>content</size>
 				<markdown><![CDATA[
 <p id="summary" itemprop="description">
-All aspects of web applications, focusing mainly on <b>performance</b>, <b>user experience</b> and <b>automation</b>,
+All aspects of web applications, focusing mainly on <b>performance</b> and <b>automation</b>,
 has been one of Wojtek life’s passions. His interests cover the fields of performance engineering/testing/monitoring,
 service-oriented applications, front-end engineering and dev-ops. Wojtek has very good understanding of web presence and
 programming skills to deliver solutions on the highest possible level.
@@ -35,17 +35,27 @@ skills of programming, software design and agile software development.
 </ul>
 
 <ul class="list--inline labels-list">
-	<li class="tag label">Ansible</li>
-	<li class="tag label">Chef</li>
-	<li class="tag label">Vagrant</li>
-	<li class="tag label">Jenkins</li>
-</ul>
-
-<ul class="list--inline labels-list">
 	<li class="tag label">node.js</li>
 	<li class="tag label">PHP</li>
 	<li class="tag label">Perl</li>
-	<li class="tag label">Java</li>
+</ul>
+
+<ul class="list--inline labels-list">
+	<li class="tag label">Ansible</li>
+	<li class="tag label">Vagrant</li>
+	<li class="tag label">Go (go.cd)</li>
+	<li class="tag label">Jmeter</li>
+	<li class="tag label">Chef</li>
+	<li class="tag label">Jenkins</li>
+</ul>
+
+
+### Clients
+
+<ul class="client-list list--inline">
+	<li class="client-list__item"><a href="https://sainsburys.co.uk/"><img src="/static/img/clients/sainsburys.png" class="client-list__logo" alt="" title="Sainsbury's"></a></li>
+	<li class="client-list__item"><a href="https://www.sky.com/"><img src="/static/img/clients/sky.png" class="client-list__logo" alt="" title="Sky"></a></li>
+	<li class="client-list__item"><a href="https://www.shell.com/"><img src="/static/img/clients/shell.png" class="client-list__logo" alt="" title="Royal Dutch Shell"></a></li>
 </ul>
 				]]></markdown>
 
@@ -53,7 +63,7 @@ skills of programming, software design and agile software development.
 ## Contact {#contact}
 
 The easiest way to contact me is via [Linked In](https://www.linkedin.com/in/wojtekoledzki).<br />
-And you can find [my CV](/cv.pdf) here.
+You can find [my CV](/cv.pdf) here.
 
 				]]></markdown>
 
@@ -63,6 +73,15 @@ And you can find [my CV](/cv.pdf) here.
 You can find all my open source projects on github [<i class="i i--github"></i>HoborgLabs](http://github.com/hoborglabs)
 
 				]]></markdown>
+			</data>
+		</component>
+
+		<component name="software-application-description">
+			<data>
+				<name link="https://github.com/ansible-city">Ansible City</name>
+				<description>
+					Collection of Ansible roles.
+				</description>
 			</data>
 		</component>
 
@@ -82,15 +101,6 @@ You can find all my open source projects on github [<i class="i i--github"></i>H
 				<description>
 					Generating static pages for your blog with displayService.phar is super easy. You can extend
 					components with PHP if you need to.
-				</description>
-			</data>
-		</component>
-
-		<component name="software-application-description">
-			<data>
-				<name>Hubot CI Operator</name>
-				<description>
-					Simple Hubot plugin for conecting your github project branches and pull requsts with Jenkins builds.
 				</description>
 			</data>
 		</component>

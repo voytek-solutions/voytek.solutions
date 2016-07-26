@@ -1,6 +1,16 @@
-section, header, footer {
+section, header {
 	padding-left: 4%;
 	padding-right: 4%;
+}
+
+section {
+	background-color: #FFFFFF;
+	margin-bottom: 350px;
+	padding-bottom: 10px
+}
+
+section, nav, header {
+	z-index: 10;
 }
 
 /**
@@ -12,6 +22,9 @@ section, header, footer {
 }
 
 .content {
+	h4 {
+		margin: 0;
+	}
 	h1, h2, h3, h4, h5, h6,
 	p, &>ol, &>ul {
 		margin-right: 0%;

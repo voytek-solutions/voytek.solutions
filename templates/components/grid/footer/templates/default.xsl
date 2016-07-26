@@ -14,6 +14,7 @@
 	<xsl:template match="/component">
 		<footer>
 			<div class="container">
+				<h2 class="banner">Voytek Solutions</h2>
 				<ul class="footer-links">
 					<li><a href="#summary">Summary</a></li>
 					<li><a href="#contact">Contact</a></li>
@@ -24,9 +25,14 @@
 						powered by <a href="http://hoborglabs.com">hoborglabs</a>
 					</p>
 					<p>
-						© 2014 Wojtek Olędzki
+						© 2014-2016 Wojtek Olędzki
 					</p>
 				</div>
+				<p itemscope="itemscope" itemtype="http://schema.org/ProfessionalService">
+					<b itemprop="legalName">Voytek Solutions Ltd</b> is a company
+					registered in England and Wales. Company No. 9449603.
+					VAT No. <span itemprop="vatID">206143743</span>
+				</p>
 			</div>
 		</footer>
 	</xsl:template>
