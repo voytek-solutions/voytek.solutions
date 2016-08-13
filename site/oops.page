@@ -1,0 +1,31 @@
+<page name="page">
+	<data>
+		<css-file>../out/static/styles/css/inline.css</css-file>
+	</data>
+
+	<component name="section">
+		<data>
+			<type></type>
+		</data>
+
+		<component name="paragraph">
+			<data>
+				<size>content</size>
+				<markdown><![CDATA[
+<h1 style="font-weight: 600;font-size: 106px;">Oops!</h1>
+<h2 style="font-size:40px">We can't seem to find the page you're looking for.</h2>
+<p>You can always go back to <a href="/">home page</a>.</p>
+				]]></markdown>
+			</data>
+		</component>
+
+	</component>
+
+	<!-- <component name="google-analytics">
+		<data>
+			<enabled>1</enabled>
+			<account>UA-37323022-2</account>
+		</data>
+	</component> -->
+
+</page>

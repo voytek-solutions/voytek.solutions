@@ -3,7 +3,7 @@ namespace components\modules\google\analytics;
 
 use Hoborg\DisplayService\Component\Component;
 
-class Component extends Component {
+class GAComponent extends Component {
 
 	public function render() {
 		$enabled = $this->data->getElementsByTagName('enabled');

@@ -1,0 +1,38 @@
+<page name="page">
+	<data>
+		<css-file>../out/static/styles/css/inline.css</css-file>
+	</data>
+
+	<component name="header">
+		<data></data>
+	</component>
+
+	<component name="section">
+		<data>
+			<type></type>
+		</data>
+
+		<component name="paragraph">
+			<data>
+				<size>content</size>
+				<schema-type>http://schema.org/ProfessionalService</schema-type>
+				<markdown><![CDATA[
+<div id="b2c"></div>
+<div id="b2c__takeover"></div>
+<script src="/static/scripts/b2c.bundle.js" type="text/javascript"></script>
+				]]></markdown>
+			</data>
+		</component>
+	</component>
+
+	<component name="footer">
+		<data></data>
+	</component>
+
+	<component name="google-analytics">
+		<data>
+			<enabled>1</enabled>
+			<account>UA-37323022-2</account>
+		</data>
+	</component>
+</page>

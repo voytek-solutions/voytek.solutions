@@ -15,6 +15,7 @@
 		<component name="paragraph">
 			<data>
 				<size>content</size>
+				<schema-type>http://schema.org/ProfessionalService</schema-type>
 				<markdown><![CDATA[
 <p id="summary" itemprop="description">
 All aspects of web applications, focusing mainly on <b>performance</b> and <b>automation</b>,
@@ -45,8 +46,8 @@ skills of programming, software design and agile software development.
 	<li class="tag label">Vagrant</li>
 	<li class="tag label">Go (go.cd)</li>
 	<li class="tag label">Jmeter</li>
-	<li class="tag label">Chef</li>
 	<li class="tag label">Jenkins</li>
+	<li class="tag label">Chef</li>
 </ul>
 
 
@@ -111,11 +112,11 @@ You can find all my open source projects on github [<i class="i i--github"></i>H
 		<data></data>
 	</component>
 
-	<!-- <component name="google-analytics">
+	<component name="google-analytics">
 		<data>
 			<enabled>1</enabled>
-			<account>UA-XXXXXX-X</account>
+			<account>UA-37323022-2</account>
 		</data>
-	</component> -->
+	</component>
 
 </page>

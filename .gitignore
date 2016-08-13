@@ -4,5 +4,10 @@
 node_modules
 /out
 /build
+/out
 /displayService.phar
 /conf/*/conf.yml
+/scripts/b2c/src/views/jst/*.js
+
+#
+*.afdesign

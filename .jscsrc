@@ -1,0 +1,10 @@
+{
+	"excludeFiles": [
+		"scripts/b2c/src/views/jst/*"
+	],
+	"validateIndentation": "\t",
+	"requireSpacesInAnonymousFunctionExpression": {
+		"beforeOpeningCurlyBrace": true,
+		"beforeOpeningRoundBrace": true
+	}
+}

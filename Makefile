@@ -6,7 +6,7 @@ DIR_OUT?=./out
 
 watch:
 	while sleep 1; do \
-		find Makefile .jshintrc find scripts/ \
+		find Makefile .jshintrc find scripts/ site/ templates/ \
 		| entr -d make lint build; \
 	done
 
@@ -50,7 +50,7 @@ deploy_aws: build gzip
 		--cache-control 'max-age=604800' \
 		out/ s3://$(AWS_BUCKET)/
 
-build: build_css build_img build_html
+build: build_css build_js build_img build_html
 	cp wojtek.oledzki.asc $(DIR_OUT)/wojtek.oledzki.asc
 	cp site/index.php $(DIR_OUT)/index.php
 	cp ~/Dropbox/Public/Oledzki\ Wojciech\ CV.pdf $(DIR_OUT)/cv.pdf
@@ -88,6 +88,12 @@ build_css:
 		--style compressed \
 		styles/sass/inline.scss \
 		$(DIR_OUT)/static/styles/css/inline.css
+
+build_js:
+	rm -f scripts/b2c/views/*.js
+	cd scripts/b2c && node process_views.js
+	rm -rf $(DIR_OUT)/static/scripts
+	./node_modules/.bin/webpack
 
 ## Lint source files
 lint:

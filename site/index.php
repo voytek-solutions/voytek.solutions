@@ -14,9 +14,17 @@ $headersMap = array(
 );
 
 $ext = pathinfo($file, PATHINFO_EXTENSION);
-$headers[] = $headersMap[$ext];
+if (isset($headersMap[$ext])) {
+    $headers[] = $headersMap[$ext];
+}
 
 foreach ($headers as $header) {
     header($header);
 }
-readfile(".${file}");
+
+if (file_exists(".${file}")) {
+    readfile(".${file}");
+} else {
+    http_response_code(404);
+    readfile("./oops.html");
+}
