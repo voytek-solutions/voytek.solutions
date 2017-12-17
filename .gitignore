@@ -1,12 +1,13 @@
 # build 'n stuff
-.sass-cache
 .DS_Store
-node_modules
-/out
+/.sass-cache
+/.venv
 /build
-/out
-/displayService.phar
 /conf/*/conf.yml
+/displayService.phar
+/node_modules
+/out
+/out
 /scripts/b2c/src/views/jst/*.js
 
 #

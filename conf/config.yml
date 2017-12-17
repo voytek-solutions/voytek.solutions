@@ -1,2 +1,2 @@
 parameters:
-  hoborg.displayService.siteRoot: '/Users/voytek/voytek-solutions/voytek.solutions'
+  hoborg.displayService.siteRoot: './'

@@ -5,8 +5,16 @@ section, header {
 
 section {
 	background-color: #FFFFFF;
-	margin-bottom: 350px;
-	padding-bottom: 10px
+	margin-bottom: 240px;
+	padding-bottom: 10px;
+	padding-top: 1px;
+	@include wide {
+		margin-bottom: 339px;
+	}
+}
+
+section:last-of-type {
+	box-shadow: 0 0px 40px 0px black;
 }
 
 section, nav, header {

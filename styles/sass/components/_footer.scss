@@ -5,7 +5,7 @@
 </footer>
 */
 
-$footer-background: #626262 !default;
+$footer-background: #404040 !default;
 $footer-color: #F1F1F1 !default;
 
 footer {
@@ -17,9 +17,7 @@ footer {
 	z-index: -10;
 
 	background-color: $footer-background;
-	/* background: radial-gradient(ellipse at top center, rgba(19,19,19,1) 0%, rgba(98,98,98,1) 70%); */
 	background: linear-gradient(180deg, #333 0%, $footer-background 45%);
-
 
 	color: $footer-color;
 
@@ -29,12 +27,23 @@ footer {
 
 	.banner {
 		text-align: center;
-		margin: 32px 0;
+		margin: 14px 0 32px 0;
 		padding: 0;
 		letter-spacing: 3px;
-		font-weight: 400;
-		font-size: 56px;
-		text-shadow: rgba(0,0,0,1) 6px 6px 16px;
+		font-weight: 600;
+		font-size: 12px;
+		color: $footer-background;
+		width: 100%;
+		background-color: #FFFFFF;
+
+		@include wide {
+			font-size: 86px;
+		}
+	}
+
+	.container {
+		padding-left: 4%;
+		padding-right: 4%;
 	}
 }
 

@@ -13,8 +13,8 @@
 
 	<xsl:template match="/component">
 		<footer>
+			<h2 class="banner">voytek solutions</h2>
 			<div class="container">
-				<h2 class="banner">Voytek Solutions</h2>
 				<ul class="footer-links">
 					<li><a href="#summary">Summary</a></li>
 					<li><a href="#contact">Contact</a></li>

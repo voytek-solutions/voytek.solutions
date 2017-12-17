@@ -1,23 +1,30 @@
-AWS_PROFILE?=vs
-AWS_REGION?=eu-west-1
-AWS_BUCKET=voytek.solutions
-PWD=$(shell pwd)
-DIR_OUT?=./out
+AWS_BUCKET = voytek.solutions
+AWS_PROFILE ?= vs
+AWS_REGION ?= eu-west-1
+DIR_OUT ?= ./out
+PWD = $(shell pwd)
 
+PATH := .venv/bin:$(shell printenv PATH)
+SHELL := env PATH=$(PATH) /bin/bash
+
+## Initialize project
+init: node_modules .venv
+
+## Watch files for changes and rebuild
 watch:
 	while sleep 1; do \
-		find Makefile .jshintrc find scripts/ site/ templates/ \
+		find Makefile .jshintrc find scripts/ site/ templates/ styles/ \
 		| entr -d make lint build; \
 	done
 
-deploy: deploy_mydevil
+deploy: deploy.mydevil
 
 ## Deployes to mydevil servers
-deploy_mydevil: clean build
+deploy.mydevil: clean build
 	scp -r out/* woledzki@s2.mydevil.net:~/domains/voytek.solutions/public_html/
 
 ## Deploys to AWS
-deploy_aws: build gzip
+deploy.aws: build gzip
 	export AWS_DEFAULT_PROFILE=$(AWS_PROFILE)
 	export AWS_DEFAULT_REGION=$(AWS_REGION)
 	aws s3 sync \
@@ -50,17 +57,19 @@ deploy_aws: build gzip
 		--cache-control 'max-age=604800' \
 		out/ s3://$(AWS_BUCKET)/
 
-build: build_css build_js build_img build_html
+## Build site
+build: build_css build_js build_img build_html $(DIR_OUT)/cv.pdf
 	cp wojtek.oledzki.asc $(DIR_OUT)/wojtek.oledzki.asc
 	cp site/index.php $(DIR_OUT)/index.php
-	cp ~/Dropbox/Public/Oledzki\ Wojciech\ CV.pdf $(DIR_OUT)/cv.pdf
+	#cp ~/Dropbox/Public/Oledzki\ Wojciech\ CV.pdf $(DIR_OUT)/cv.pdf
 
+## Start site locally on http://localhost:8888
 serve:
 	cd $(DIR_OUT) && php -S localhost:8888
 
 ## Builds static HTML
-build_html:
-	DS_HOSTDIR=$(PWD) \
+build_html: displayService.phar
+	DS_HOSTDIR=$(PWD)/ \
 	DS_ENV=prod \
 	php displayService.phar \
 		ds:generate \
@@ -80,15 +89,16 @@ build_css:
 	mkdir -p out/static/styles/css
 	rm -rf out/static/styles/gfx
 	cp -R styles/gfx out/static/styles/
-	~/.gem/ruby/2.0.0/bin/sass \
+	$${GEM_HOME}/bin/sass \
 		--style compressed \
 		styles/sass/main.scss \
 		$(DIR_OUT)/static/styles/css/main.css
-	~/.gem/ruby/2.0.0/bin/sass \
+	$${GEM_HOME}/bin/sass \
 		--style compressed \
 		styles/sass/inline.scss \
 		$(DIR_OUT)/static/styles/css/inline.css
 
+## Build JS for the site
 build_js:
 	rm -f scripts/b2c/views/*.js
 	cd scripts/b2c && node process_views.js
@@ -104,8 +114,9 @@ lint:
 		scripts/b2c/src \
 		scripts/b2c/test/spec
 
+## Gzip content in 'DIR_OUT' folder
 gzip:
-	find out \( -iname '*.html' -o -iname '*.css' -o -iname '*.js' -o -iname '*.png' -o -iname '*.jpg' \) \
+	find $(DIR_OUT) \( -iname '*.html' -o -iname '*.css' -o -iname '*.js' -o -iname '*.png' -o -iname '*.jpg' \) \
 		-exec gzip -9 -n {} \; \
 		-exec mv {}.gz {} \;
 
@@ -114,11 +125,33 @@ clean:
 	mkdir -p out
 	rm -rf out/*
 
+# install local venv with
+.venv:
+	@which virtualenv > /dev/null || (\
+		echo "please install virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/" \
+		&& exit 1 \
+	)
+	virtualenv .venv
+	.venv/bin/pip install -U "pip<9.0"
+	.venv/bin/pip install pyopenssl urllib3[secure] requests[security]
+	.venv/bin/pip install -r requirements.txt --ignore-installed
+	virtualenv --relocatable .venv
+
+# install npm requirements
+node_modules:
+	npm install
+
+$(DIR_OUT)/cv.pdf:
+	curl -Lo $(DIR_OUT)/cv.pdf "https://www.dropbox.com/s/5bhok74pfnhwah2/Oledzki Wojciech CV.pdf"
+
+displayService.phar:
+	curl -LO http://get.hoborglabs.com/displayService.phar
+
 ## Prints this help
 help:
-	@grep -h -E '^#' -A 1 $(MAKEFILE_LIST) | grep -v "-" | \
-	awk 'BEGIN{ doc_mode=0; doc=""; doc_h=""; FS="#" } { \
-		if (""!=$$3) { doc_mode=2 } \
-		if (match($$1, /^[%.a-zA-Z_-]+:/) && doc_mode==1) { sub(/:.*/, "", $$1); printf "\033[34m%-30s\033[0m\033[1m%s\033[0m %s\n\n", $$1, doc_h, doc; doc_mode=0; doc="" } \
-		if (doc_mode==1) { $$1=""; doc=doc "\n" $$0 } \
-		if (doc_mode==2) { doc_mode=1; doc_h=$$3 } }'
+	@awk -v skip=1 \
+		'/^##/ { sub(/^[#[:blank:]]*/, "", $$0); doc_h=$$0; doc=""; skip=0; next } \
+		 skip  { next } \
+		 /^#/  { doc=doc "\n" substr($$0, 2); next } \
+		 /:/   { sub(/:.*/, "", $$0); printf "\033[34m%-30s\033[0m\033[1m%s\033[0m %s\n\n", $$0, doc_h, doc; skip=1 }' \
+		$(MAKEFILE_LIST)
